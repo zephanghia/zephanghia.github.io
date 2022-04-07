@@ -8,7 +8,7 @@
 		.box {
 			width: 70px;
 			height: 70px;
-			background-color: teal;
+			background-color: orangered;
 			font-size: 300%;
 			text-align: center;
 			display: block;
@@ -17,7 +17,7 @@
 			left: 0px;  /* <--- Change me! */
 		}
 		.board{
-			height: 100vh;
+		background-color:currentColor ;
 		}
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
@@ -45,11 +45,14 @@
 			
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);
+			
 
 			// moves the Box to a new position on the screen along the X-Axis
 			function moveBoxTo(newPositionX) {
 				box.css("left", newPositionX);
 			}
+			
+			
 
 			// changes the text displayed on the Box
 			function changeBoxText(newText) {
@@ -61,7 +64,9 @@
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
-			
+			var location = 0
+			var points =0;
+			var speed = 5;
 
 			
 			/* 
@@ -70,6 +75,16 @@
 			turn it around! 
 			*/
 			function update() {
+				moveBoxTo(location);
+			location = location + speed;
+			// x = x + 5;
+
+
+
+			if (location){
+
+			}
+
 				
 
 			};
@@ -80,7 +95,15 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				
+				location = 0;
+				speed = speed + 3;
+				//Write a line to increase points by 1
+				points = points + 1;
+				changeBoxText(points);
+
+
+
+
 
 
 			};
